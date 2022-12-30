@@ -1,3 +1,9 @@
+:root {
+  --body-bg-color: #FED745;
+  --card-bg-color: #ffffff;
+  --card-text-color: #000000;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -338,7 +344,32 @@ template {
   display: none;
 }
 
-/* FONTS */ /* GENERAL */
+/* FONTS */
+/* roboto-regular - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-v30-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/roboto-v30-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v30-latin-regular.woff2") format("woff2"), url("../fonts/roboto-v30-latin-regular.woff") format("woff"), url("../fonts/roboto-v30-latin-regular.ttf") format("truetype"), url("../fonts/roboto-v30-latin-regular.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/roboto-v30-latin-500.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/roboto-v30-latin-500.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v30-latin-500.woff2") format("woff2"), url("../fonts/roboto-v30-latin-500.woff") format("woff"), url("../fonts/roboto-v30-latin-500.ttf") format("truetype"), url("../fonts/roboto-v30-latin-500.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/roboto-v30-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/roboto-v30-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-v30-latin-700.woff2") format("woff2"), url("../fonts/roboto-v30-latin-700.woff") format("woff"), url("../fonts/roboto-v30-latin-700.ttf") format("truetype"), url("../fonts/roboto-v30-latin-700.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+/* GENERAL */
 html {
   box-sizing: border-box;
   height: 100%;
@@ -352,19 +383,30 @@ html {
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: "Arial", sans-serif;
-  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  background-color: var(--body-bg-color);
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
 /* VISUALLY-HIDDEN */
@@ -382,9 +424,128 @@ img {
 /* CONTAINER */
 .container {
   width: 100%;
-  max-width: 900px;
-  padding-left: 50px;
-  padding-right: 50px;
+  max-width: 1355px;
+  padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/************ HEADER STYLES START *********/
+.site-header__wrapper {
+  margin-bottom: 70px;
+}
+
+.site-header__like {
+  position: absolute;
+  top: 50px;
+  right: calc(50% - 540px);
+}
+
+/************ HEADER STYLES END *********/
+/********** MAIN STYLES START *********/
+.site-main {
+  flex-grow: 1;
+}
+
+/*********** QUESTION SECTION START *************/
+.question-section__wrapper {
+  margin-bottom: 100px;
+}
+
+.question-section__select {
+  padding: 16px 70px 16px 83px;
+  border: 2px solid var(--card-text-color);
+  border-radius: 15px;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.question-section__input {
+  padding: 16px 120px 16px 29px;
+  background-image: url(../../images/logo/search.svg);
+  background-repeat: no-repeat;
+  background-position: 380px center;
+  border: 2px solid var(--card-text-color);
+  border-radius: 15px;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.question-section__btn {
+  padding: 16px 64px;
+  border: 2px solid var(--card-text-color);
+  border-radius: 15px;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+/*********** QUESTION SECTION END *************/
+/************ CARDS SECTION STYLES START ************/
+.cards-section__item {
+  padding-top: 30px;
+  padding-bottom: 37px;
+  border: 2px solid var(--card-text-color);
+  border-radius: 20px;
+}
+
+.card-img-top {
+  padding-bottom: 68px;
+  padding-left: 75px;
+  padding-right: 75px;
+  border-bottom: 2px solid var(--card-text-color);
+}
+
+.card-body {
+  position: relative;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-left: 37px;
+}
+
+.cards-section__list {
+  gap: 23px;
+}
+
+.card-title {
+  margin-bottom: 5px;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.card-title::before {
+  position: absolute;
+  width: 25px;
+  height: 21px;
+  top: 23px;
+  right: 30px;
+  background-image: url(../../images/logo/like.svg);
+  background-repeat: no-repeat;
+  background-size: 23px;
+  content: "";
+}
+
+.card-text {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.pokemon-about {
+  margin-top: 25px;
+}
+
+.card-wight {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.card-age {
+  margin-left: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+/************ CARDS SECTION STYLES END ************/
+/********** MAIN STYLES END *********//*# sourceMappingURL=main.css.map */

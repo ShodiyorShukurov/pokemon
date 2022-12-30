@@ -1,0 +1,32 @@
+/*********** QUESTION SECTION START *************/
+.question-section__wrapper{
+    margin-bottom: 100px;
+}
+.question-section__select {
+    padding: 16px 70px 16px 83px;
+    border: 2px solid var(--card-text-color);
+    border-radius: 15px;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.question-section__input {
+    padding: 16px 120px 16px 29px;
+    background-image: url(../../images/logo/search.svg);
+    background-repeat: no-repeat;
+    background-position: 380px center;
+    border: 2px solid var(--card-text-color);
+    border-radius: 15px;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.question-section__btn {
+    padding: 16px 64px;
+    border: 2px solid var(--card-text-color);
+    border-radius: 15px;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+/*********** QUESTION SECTION END *************/
